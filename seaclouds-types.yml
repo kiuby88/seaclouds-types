@@ -9,6 +9,21 @@ description: Contains the SeaClouds types definition.
 imports:
 - tosca-normative-types:1.0.0.wd06-SNAPSHOT
 
+relationship_types:
+  brooklyn.relationships.Configure:
+    derived_from: tosca.relationships.DependsOn
+    valid_targets: [ tosca.capabilities.Endpoint ]
+    properties:
+      prop.name:
+        type: string
+        required: false
+      prop.value:
+        type: string
+        required: true
+      prop.collection:
+        type: string
+        required: false
+
 node_types:
   seaclouds.nodes.Compute:
    derived_from: tosca.nodes.Compute
@@ -99,6 +114,8 @@ node_types:
       creationScriptUrl:
         type: string
         required: false
+    capabilities:
+      dbConnection: tosca.capabilities.Endpoint.Database
     requirements:
     - host: tosca.nodes.Compute
       type: tosca.relationships.HostedOn
