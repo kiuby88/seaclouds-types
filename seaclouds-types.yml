@@ -168,3 +168,37 @@ node_types:
       type: tosca.relationships.HostedOn
       lower_bound: 0
       upper_bound: unbounded
+
+  org.apache.brooklyn.entity.cloudfoundry.webapp.java.JavaCloudFoundryPaasWebApp:
+    derived_from: tosca.nodes.Root
+    description: >
+      A simple Tomcat server
+    properties:
+      application-name:
+        type: string
+        required: false
+      application-url:
+        type: string
+        required: false
+      env:
+        type: map
+        required: false
+        entry_schema:
+          type: string
+
+  org.apache.brooklyn.entity.cloudfoundry.webapp.php.PhpCloudFoundryPaasWebApp:
+    derived_from: tosca.nodes.Root
+    description: >
+      An CloudFoundry PHP Application
+    properties:
+      application-name:
+        type: string
+        required: true
+      application-url:
+        type: string
+        required: true
+      env:
+        type: map
+        required: false
+        entry_schema:
+          type: string
