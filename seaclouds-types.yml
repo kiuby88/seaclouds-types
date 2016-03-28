@@ -193,6 +193,15 @@ node_types:
         required: false
         entry_schema:
           type: string
+    requirements:
+      - dbConnection: tosca.nodes.Root
+        type: brooklyn.relationships.Configure
+        lower_bound: 0
+        upper_bound: unbounded
+      - endpoint_configuration: tosca.nodes.Root
+        type: brooklyn.relationships.Configure
+        lower_bound: 0
+        upper_bound: unbounded
 
   org.apache.brooklyn.entity.cloudfoundry.webapp.php.PhpCloudFoundryPaasWebApp:
     derived_from: tosca.nodes.Root
