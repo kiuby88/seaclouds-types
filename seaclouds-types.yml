@@ -195,6 +195,9 @@ node_types:
         required: false
         entry_schema:
           type: string
+      buildpack:
+        type: string
+        required: false
     capabilities:
       endpoint_configuration: tosca.capabilities.Endpoint
     requirements:
