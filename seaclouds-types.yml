@@ -178,6 +178,14 @@ node_types:
       type: tosca.relationships.HostedOn
       lower_bound: 0
       upper_bound: unbounded
+    - dbConnection: tosca.nodes.Root
+      type: brooklyn.relationships.Configure
+      lower_bound: 0
+      upper_bound: unbounded
+    - endpoint_configuration: tosca.nodes.Root
+      type: brooklyn.relationships.Configure
+      lower_bound: 0
+      upper_bound: unbounded
 
   org.apache.brooklyn.entity.cloudfoundry.webapp.java.JavaCloudFoundryPaasWebApp:
     derived_from: tosca.nodes.Root
