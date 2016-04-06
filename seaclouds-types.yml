@@ -234,6 +234,8 @@ node_types:
         required: false
         entry_schema:
           type: string
+    capabilities:
+      endpoint_configuration: tosca.capabilities.Endpoint
     requirements:
     - dbConnection: tosca.nodes.Root
       type: brooklyn.relationships.Configure
