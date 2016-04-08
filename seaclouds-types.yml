@@ -173,6 +173,8 @@ node_types:
       tarball.url:
         type: string
         required: false
+    capabilities:
+      endpoint_configuration: tosca.capabilities.Endpoint        
     requirements:
     - host: tosca.nodes.Compute
       type: tosca.relationships.HostedOn
