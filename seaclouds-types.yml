@@ -110,9 +110,19 @@ node_types:
       wars.root:
         type: string
         required: false
+    capabilities:
+      endpoint_configuration: tosca.capabilities.Endpoint
     requirements:
       - host: tosca.nodes.Compute
         type: tosca.relationships.HostedOn
+        lower_bound: 0
+        upper_bound: unbounded
+      - dbConnection: tosca.nodes.Root
+        type: brooklyn.relationships.Configure
+        lower_bound: 0
+        upper_bound: unbounded
+      - endpoint_configuration: tosca.nodes.Root
+        type: brooklyn.relationships.Configure
         lower_bound: 0
         upper_bound: unbounded
 
